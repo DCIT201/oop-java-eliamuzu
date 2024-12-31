@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="VehicleRentalManagementSystem" target="23" />
+      <module name="VehicleRentalManagementSystem.main" target="23" />
+      <module name="VehicleRentalManagementSystem.test" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
