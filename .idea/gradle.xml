@@ -9,6 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/VehicleRentalManagementSystem" />
+            <option value="$PROJECT_DIR$/VehicleRentalManagementSystem/src" />
+            <option value="$PROJECT_DIR$/VehicleRentalManagementSystem/src/main" />
+            <option value="$PROJECT_DIR$/VehicleRentalManagementSystem/src/main/test" />
+            <option value="$PROJECT_DIR$/VehicleRentalManagementSystem/src/test" />
+            <option value="$PROJECT_DIR$/VehicleRentalManagementSystem/src/untitled" />
           </set>
         </option>
       </GradleProjectSettings>
