@@ -1,18 +1,22 @@
 package Inventory;
 
+import Operations.LoyaltyProgramme;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer {
+public class Customer implements LoyaltyProgramme {
     private String customerId;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
     private String address;
+    private static int count = 0;
     private List<RentalTransactions> rentalHistory;
 
     public Customer(String firstName, String lastName, String email, String phoneNumber, String address) {
+        this.customerId = "Cust" + ++count;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -22,7 +26,7 @@ public class Customer {
     }
 
     public String getName() {
-        return firstName + lastName;
+        return firstName +" " + lastName;
     }
 
     public String getEmail() {
@@ -55,14 +59,18 @@ public class Customer {
     }
 
     public List<RentalTransactions> getRentalHistory() {
-        for(RentalTransactions r : rentalHistory) {
-            System.out.println(r.toString());
-        }
-        return null;
+        return rentalHistory;
     }
 
     public void addRentalRecord(RentalTransactions r) {
         rentalHistory.add(r);
+    }
+
+    @Override
+    public void eligibleForLoyaltyProgramme() {
+        if(rentalHistory.size() > 3){
+            System.out.println("Yay! you get a 10% discount on your next rental");
+        }
     }
 
 

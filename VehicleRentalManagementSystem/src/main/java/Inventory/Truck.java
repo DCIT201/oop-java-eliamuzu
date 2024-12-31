@@ -1,11 +1,12 @@
 package Inventory;
 
 import java.util.List;
+import java.util.ArrayList; 
 
 public class Truck extends Vehicle {
     private int loadCapacity = 10;
-    private List <Truck> rentedTrucks;
-    private List<Truck> availableTrucks;
+    private static List <Truck> rentedTrucks = new ArrayList<>();
+    private static List<Truck> availableTrucks = new ArrayList<>();
 
     public Truck(String model, double baseRentalCost) {
         super(model, baseRentalCost);
@@ -50,17 +51,12 @@ public class Truck extends Vehicle {
         availableTrucks.add(this);
     }
 
-    public void getRentedTrucks() {
-        System.out.println("The following trucks have been rented: ");
-        for(Truck truck : rentedTrucks){
-            System.out.println(truck);
+    public static List<Truck> getRentedTrucks() {
+        return rentedTrucks;
         }
-    }
 
-    public void getAvailableTrucks() {
-        for(Truck truck : availableTrucks){
-            System.out.println(truck);
-        }
+    public static List<Truck> getAvailableTrucks() {
+        return availableTrucks;
     }
 
 }

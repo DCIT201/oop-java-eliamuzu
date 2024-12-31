@@ -1,20 +1,33 @@
 package Inventory;
 
+import Operations.BusinessLogic;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class RentalAgency {
+public class RentalAgency{
     private String agencyName;
     private String agencyNumber;
     private String rentalDays;
     private List <Vehicle> vehicles;
-    private List <RentalTransactions> rentalTransactions;
+    static List <RentalTransactions> rentalTransactions = new ArrayList<>();
 
     public RentalAgency(String agencyName, String agencyNumber, String rentalDays) {
+        if (agencyName == null || agencyName.isEmpty()) {
+            throw new IllegalArgumentException("Agency name cannot be null or empty");
+        }
+        if (agencyNumber == null || agencyNumber.isEmpty()) {
+            throw new IllegalArgumentException("Agency number cannot be null or empty");
+        }
+        if (rentalDays == null || rentalDays.isEmpty()) {
+            throw new IllegalArgumentException("Rental days cannot be null or empty");
+        }
+
         this.agencyName = agencyName;
         this.agencyNumber = agencyNumber;
-        this.rentalDays= rentalDays;
+        this.rentalDays = rentalDays;
         this.vehicles = new ArrayList<>();
+
     }
 
     public String getAgencyName() {
@@ -81,5 +94,7 @@ public class RentalAgency {
     public List<RentalTransactions> getRentalTransactions() {
         return rentalTransactions;
     }
+
+
 
 }

@@ -2,13 +2,14 @@ package Inventory;
 
 import Operations.Rentable;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Motorcycle extends Vehicle implements Rentable {
+public class Motorcycle extends Vehicle {
     private String category;
     private int numberOfHelmets;
-    private List<Motorcycle> availableMotorcycles;
-    private List<Motorcycle> rentedMotorcycles;
+    private static List<Motorcycle> availableMotorcycles = new ArrayList<>();
+    private static List<Motorcycle> rentedMotorcycles = new ArrayList<>();
 
 
     public Motorcycle(String model, double baseRentalCost) {
